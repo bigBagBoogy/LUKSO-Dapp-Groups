@@ -2,9 +2,7 @@
 
 git init
 git add .
-git commit -m "re-build navbar"
+git commit -m "adjusted home"
 git push -u origin main
 
 # todo:⭐️
-
-# project tree reference:

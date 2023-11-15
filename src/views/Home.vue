@@ -30,22 +30,22 @@ const hasExtension = computed(() => !!window.lukso)
     ></Notifications>
     <div class="tile is-ancestor">
       <Accounts />
+      <Assets />
+      <Mint />
+    </div>
+    <div class="tile is-ancestor">     
+      <Transfer />
       <SendTransaction />
       <SetData />
     </div>
     <div class="tile is-ancestor">
-      <Assets />
-      <Mint />
-      <Transfer />
-    </div>
-    <div class="tile is-ancestor">
-      <Permissions />
+      <!-- <Permissions />
       <CustomRelayer />
-      <ImportProfile />
+      <ImportProfile /> -->
     </div>
     <div class="tile is-ancestor">
-      <Sign />
-      <GetNetworkId />
+      <!-- <Sign />
+      <GetNetworkId /> -->
     </div>
   </section>
 </template>
