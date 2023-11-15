@@ -16,13 +16,13 @@ const showNav = ref<boolean>(params.get('hideNav') == undefined)
 
 <style lang="scss">
 html {
-  background-color: #f2f2f2 !important;
+  background-color: #ffb7b7 !important;
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #5d0088;
 }
 </style>
