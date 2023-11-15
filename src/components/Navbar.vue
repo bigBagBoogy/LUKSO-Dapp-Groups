@@ -92,9 +92,9 @@ const handleClick = () => {
               class="button is-light"
               target="_blank"
               rel="noreferer"
-              href="https://github.com/lukso-network/universalprofile-test-dapp"
+              href="https://github.com/bigBagBoogy"
             >
-              <strong>GitHub</strong>
+              <strong>bigBagBoogy</strong>
             </a>
             <Suspense>
               <Connect />
@@ -116,7 +116,7 @@ nav {
     font-weight: bold;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #5e0035;
     }
   }
 }
