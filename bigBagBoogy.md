@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "added favicon"
+git commit -m "build navbar"
 git push -u origin main
 
 # todo:⭐️
