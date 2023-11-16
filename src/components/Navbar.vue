@@ -71,23 +71,7 @@ const handleClick = () => {
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons">
-            <a
-              class="button is-light"
-              target="_blank"
-              rel="noreferer"
-              href="https://docs.lukso.tech/"
-            >
-              <strong>LUKSO DOCS</strong>
-            </a>
-            <a
-              class="button is-light"
-              target="_blank"
-              rel="noreferer"
-              href="https://erc725-inspect.lukso.tech/"
-            >
-              <strong>ERC725 Inspect</strong>
-            </a>
+          <div class="buttons">           
             <a
               class="button is-light"
               target="_blank"

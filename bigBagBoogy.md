@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "before show/hide all"
+git commit -m "after show/hide all"
 git push -u origin main
 
 # todo:⭐️
