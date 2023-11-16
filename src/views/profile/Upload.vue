@@ -144,35 +144,7 @@ const removeBackgroundImage = () => {
 
 <template>
   <div class="section">
-    <h1 class="title">Profile Upload</h1>
-    <article class="message is-info card has-background-white">
-      <div class="message-header">
-        <p>Info</p>
-      </div>
-      <div class="message-body">
-        <div class="content">
-          <p>
-            This page allows you to generate and upload your
-            <strong>LSP3Profile</strong> data including the profile- and
-            background-image, as per
-            <a
-              href="https://github.com/lukso-network/LIPs/blob/master/LSPs/LSP-3-UniversalProfile.md"
-            >
-              LSP-3-UniversalProfile
-            </a>
-            standard.
-          </p>
-          <p>
-            Each image will be compressed and resized into five variants with a
-            <code>max-width</code> of <code>1800px</code>, <code>1024px</code>,
-            <code>640px</code>, <code>320px</code> and <code>180px</code>.
-          </p>
-          <p class="has-text-weight-bold">
-            This will not perform any operation on the blockchain.
-          </p>
-        </div>
-      </div>
-    </article>
+    <h1 class="title">Make Your Group</h1>
     <Notifications
       v-if="hasNotification"
       :notification="notification"
@@ -527,6 +499,9 @@ section {
 .upload-form {
   padding: 20px;
   margin-bottom: 20px;
+  width: 90vw; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pre {
