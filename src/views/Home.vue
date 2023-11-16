@@ -13,6 +13,7 @@ import ImportProfile from '@/components/endpoints/ImportProfile.vue'
 import GetNetworkId from '@/components/endpoints/GetNetworkId.vue'
 import Transfer from '@/components/endpoints/Transfer.vue'
 import Mint from '@/components/endpoints/Mint.vue'
+import Landing from '@/components/endpoints/Landing.vue'
 
 const hasExtension = computed(() => !!window.lukso)
 </script>
@@ -29,6 +30,12 @@ const hasExtension = computed(() => !!window.lukso)
       class="mb-4"
     ></Notifications>
     <div class="tile is-ancestor">
+      <Landing />
+      <!-- <Permissions />
+      <CustomRelayer />
+      <ImportProfile /> -->
+    </div>
+    <div class="tile is-ancestor">
       <Accounts />
       <Assets />
       <Mint />
@@ -38,11 +45,7 @@ const hasExtension = computed(() => !!window.lukso)
       <SendTransaction />
       <SetData />
     </div>
-    <div class="tile is-ancestor">
-      <!-- <Permissions />
-      <CustomRelayer />
-      <ImportProfile /> -->
-    </div>
+    
     <div class="tile is-ancestor">
       <!-- <Sign />
       <GetNetworkId /> -->

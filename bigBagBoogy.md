@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "adjusted home"
+git commit -m "integrated Landing"
 git push -u origin main
 
 # todo:⭐️
