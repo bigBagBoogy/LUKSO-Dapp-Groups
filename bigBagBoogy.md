@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "connected upload"
+git commit -m "show/hide setData"
 git push -u origin main
 
 # todo:⭐️

@@ -418,6 +418,9 @@ const removeBackgroundImage = () => {
     left: 0;
   }
 }
+h1 {
+  color: #fff;
+}
 
 .image-profile {
   display: flex;

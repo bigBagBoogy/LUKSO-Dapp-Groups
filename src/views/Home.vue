@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 import SendTransaction from '@/components/endpoints/SendTransaction.vue'
 import Accounts from '@/components/endpoints/Accounts.vue'
@@ -15,7 +15,10 @@ import Transfer from '@/components/endpoints/Transfer.vue'
 import Mint from '@/components/endpoints/Mint.vue'
 import Landing from '@/components/endpoints/Landing.vue'
 
+
 const hasExtension = computed(() => !!window.lukso)
+const showSetData = ref(false)
+
 </script>
 
 <template>
@@ -43,7 +46,8 @@ const hasExtension = computed(() => !!window.lukso)
     <div class="tile is-ancestor">     
       <Transfer />
       <SendTransaction />
-      <SetData />
+      <button @click="showSetData = true">SetData</button>
+      <SetData v-if="showSetData"/>
     </div>
     
     <div class="tile is-ancestor">

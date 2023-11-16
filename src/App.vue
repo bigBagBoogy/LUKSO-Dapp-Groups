@@ -16,7 +16,7 @@ const showNav = ref<boolean>(params.get('hideNav') == undefined)
 
 <style lang="scss">
 html {
-  background-color: #ffb7b7 !important;
+  background-color: #242424 !important;
 }
 
 #app {
