@@ -19,6 +19,10 @@ import Landing from '@/components/endpoints/Landing.vue'
 const hasExtension = computed(() => !!window.lukso)
 const showSetData = ref(false)
 
+const toggleSetData = () => {
+  showSetData.value = !showSetData.value;
+};
+
 </script>
 
 <template>
@@ -46,10 +50,10 @@ const showSetData = ref(false)
     <div class="tile is-ancestor">     
       <Transfer />
       <SendTransaction />
-      <button @click="showSetData = true">SetData</button>
-      <SetData v-if="showSetData"/>
+      <button :class="`button is-primary mb-1`" @click="toggleSetData">SetData</button>
+      <SetData v-if="showSetData" />
     </div>
-    
+      
     <div class="tile is-ancestor">
       <!-- <Sign />
       <GetNetworkId /> -->

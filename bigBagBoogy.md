@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "show/hide setData"
+git commit -m "before show/hide all"
 git push -u origin main
 
 # todo:⭐️

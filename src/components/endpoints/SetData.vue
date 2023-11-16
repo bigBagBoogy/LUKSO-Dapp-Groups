@@ -14,6 +14,7 @@ const value = ref(
 ) // encoded profile ipfs url
 const isPending = ref(false)
 
+
 const setData = async () => {
   clearNotification()
   const erc725AccountAddress = getState('address')
@@ -43,8 +44,8 @@ const setData = async () => {
 </script>
 
 <template>
-  <div class="tile is-4 is-parent">
-    <div class="tile is-child box">
+<div class="tile is-4 is-parent">
+      <div class="tile is-child box">
       <p class="is-size-5 has-text-weight-bold mb-4">Change Data</p>
       <div class="field">
         <label class="label">Key</label>
@@ -60,7 +61,7 @@ const setData = async () => {
       </div>
       <div class="field">
         <button
-          :class="`button is-primary is-rounded mb-3 ${
+          :class="`button is-primary mb-1 ${
             isPending ? 'is-loading' : ''
           }`"
           data-testid="setData"
