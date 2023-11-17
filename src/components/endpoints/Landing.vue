@@ -7,21 +7,17 @@ import ProfileUpload from '@/views/profile/Upload.vue'
   
       const handleButtonClick = () => {
         showForm.value = !showForm.value;
-      };
-  
-  
-      const handleSubmit = (lsp3Profile) => {
-        console.log(lsp3Profile);  
-    }
+      };    
+
   </script>
 
 <template>
     <div>
-      <h1>Lukso Dapp</h1>      
+      <h1>Lukso Group Dapp</h1>      
         <img src="/bearPink-spinning.svg" class="logo" alt="logo" />      
       <!-- only show the form onClick -->
       <button @click="handleButtonClick">Create Universal Group</button>
-      <ProfileUpload     v-if="showForm" @onSubmit="handleSubmit" />
+      <ProfileUpload     v-if="showForm" @click="handleButtonClick" />
     </div>
 </template>
   

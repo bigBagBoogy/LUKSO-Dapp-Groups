@@ -44,12 +44,22 @@ const handleClick = () => {
     </div>
 
     <div id="navbar" ref="menu" class="navbar-menu">
-      <div class="navbar-start">
-        <router-link class="navbar-item" to="/">HOME RPC</router-link>
-        <router-link class="navbar-item" to="/iframe"
-          >EIP-5593 IFrame</router-link
-        >
-
+      <div class="navbar-start">   
+        <!-- search bar -->     
+        <div class="field has-addons">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Find Group"
+                  @input="($event) => handleSearch($event.target.value)"
+                />
+              </div>
+              <div class="control">
+                <button class="button is-info" id="search">Search</button>
+              </div>
+            </div>
+            <!-- Profiles -->
         <div class="navbar-item has-dropdown is-hoverable">
           <router-link class="navbar-item" to="/profiles">Profiles</router-link>
 
@@ -104,4 +114,15 @@ nav {
     }
   }
 }
+.field {
+  margin-top: 4%;
+  }
+
+  input {
+    width: 200px; // Adjust the width as needed
+  }
+
+  #search {
+    background-color: #5e0035; 
+  }
 </style>
