@@ -1,6 +1,5 @@
-<!-- src/views/Home.vue -->
 <script setup lang="ts">
-import { computed, ref, watch, inject } from 'vue'
+import { computed, ref } from 'vue'
 
 import SendTransaction from '@/components/endpoints/SendTransaction.vue'
 import Accounts from '@/components/endpoints/Accounts.vue'
@@ -11,40 +10,27 @@ import Sign from '@/components/endpoints/Sign.vue'
 import CustomRelayer from '@/components/endpoints/CustomRelayer.vue'
 import Notifications from '@/components/Notification.vue'
 import Transfer from '@/components/endpoints/Transfer.vue'
-
 import ImportProfile from '@/components/endpoints/ImportProfile.vue'
 import GetNetworkId from '@/components/endpoints/GetNetworkId.vue'
 import Mint from '@/components/endpoints/Mint.vue'
 import Landing from '@/components/endpoints/Landing.vue'
 
-
 const hasExtension = computed(() => !!window.lukso)
-const showAccounts = ref(false)
-const showAssets = ref(false)
-const showMint = ref(false)
-const showSendTransaction = ref(false)
-const showSetData = ref(false)  
-const showTransfer = ref(false) 
 
-const toggleAccounts = () => {
-  showAccounts.value = !showAccounts.value;
-};
-const toggleAssets = () => {
-  showAssets.value = !showAssets.value;
-};
-const toggleMint = () => {
-  showMint.value = !showMint.value;
-};
-const toggleSendTransaction = () => {
-  showSendTransaction.value = !showSendTransaction.value;
-};
-const toggleSetData = () => {
-  showSetData.value = !showSetData.value;
-};
-const toggleTransfer = () => {
-  showTransfer.value = !showTransfer.value;
-};
+type ComponentName = 'Accounts' | 'Assets' | 'Mint' | 'SendTransaction' | 'SetData' | 'Transfer';
 
+const componentVisibility = ref<Record<ComponentName, boolean>>({
+  Accounts: false,
+  Assets: false,
+  Mint: false,
+  SendTransaction: false,
+  SetData: false,
+  Transfer: false,
+})
+
+const toggleVisibility = (componentName: ComponentName) => {
+  componentVisibility.value[componentName] = !componentVisibility.value[componentName]
+}
 
 </script>
 
@@ -53,7 +39,7 @@ const toggleTransfer = () => {
     <Notifications
       v-if="!hasExtension"
       :notification="{
-        message: 'Please instal Universal Profile browser extension.',
+        message: 'Please install Universal Profile browser extension.',
         type: 'warning',
       }"
       :hide-notification="true"
@@ -61,30 +47,25 @@ const toggleTransfer = () => {
     ></Notifications>
     <div class="tile is-ancestor">
       <Landing />
-      <!-- <Permissions />
-      <CustomRelayer />
-      <ImportProfile /> -->
     </div>
     <div class="tile is-ancestor">
-      <button :class="`button is-primary mb-1`" @click="toggleAccounts">Accounts</button>
-      <Accounts v-if="showAccounts" />
-      <button :class="`button is-primary mb-1`" @click="toggleAssets">Assets</button>
-      <Assets v-if="showAssets" />
-      <button :class="`button is-primary mb-1`" @click="toggleMint">Mint</button>
-      <Mint v-if="showMint" />
+      <button class="button is-primary mb-1" @click="toggleVisibility('Accounts')">Accounts</button>
+      <Accounts v-if="componentVisibility.Accounts" />
+      <button class="button is-primary mb-1" @click="toggleVisibility('Assets')">Assets</button>
+      <Assets v-if="componentVisibility.Assets" />
+      <button class="button is-primary mb-1" @click="toggleVisibility('Mint')">Mint</button>
+      <Mint v-if="componentVisibility.Mint" />
     </div>
-    <div class="tile is-ancestor">  
-      <button :class="`button is-primary mb-1`" @click="toggleTransfer">Transfer</button>
-      <Transfer v-if="showTransfer" />
-      <button :class="`button is-primary mb-1`" @click="toggleSendTransaction">SendTransaction</button>
-      <SendTransaction v-if="showSendTransaction" />
-      <button :class="`button is-primary mb-1`" @click="toggleSetData">SetData</button>
-      <SetData v-if="showSetData" />
-    </div>
-      
     <div class="tile is-ancestor">
-      <!-- <Sign />
-      <GetNetworkId /> -->
+      <button class="button is-primary mb-1" @click="toggleVisibility('Transfer')">Transfer</button>
+      <Transfer v-if="componentVisibility.Transfer" />
+      <button class="button is-primary mb-1" @click="toggleVisibility('SendTransaction')">SendTransaction</button>
+      <SendTransaction v-if="componentVisibility.SendTransaction" />
+      <button class="button is-primary mb-1" @click="toggleVisibility('SetData')">SetData</button>
+      <SetData v-if="componentVisibility.SetData" />
+    </div>
+    <div class="tile is-ancestor">
+      <!-- Add other components here -->
     </div>
   </section>
 </template>
