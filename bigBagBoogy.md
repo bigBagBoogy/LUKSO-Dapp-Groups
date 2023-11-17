@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "forked Home.vue"
+git commit -m "Home wordt schakelkast"
 git push -u origin main
 
 # todo:⭐️
