@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "modularized Home.vue"
+git commit -m "forked Home.vue"
 git push -u origin main
 
 # todo:⭐️
