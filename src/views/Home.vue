@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import CreateGroup from '@/views/profile/CreateGroup.vue'
 
 import Notifications from '@/components/Notification.vue'
 import Landing from '@/components/endpoints/Landing.vue'
@@ -22,7 +23,7 @@ const hasExtension = computed(() => !!window.lukso)
       class="mb-4"
     ></Notifications>
     <div class="tile is-ancestor">
-      <Landing />
+      <Landing />      
     </div>    
   </section>
 </template>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Profile from '@/views/Profile.vue'
-import ProfileUpload from '@/views/profile/Upload.vue'
+import CreateGroup from '@/views/profile/CreateGroup.vue'
 import Detail from '@/views/profile/Detail.vue'
 import ProfileDeploy from '@/views/profile/Deploy.vue'
 import IFrame from '@/views/IFrame.vue'
@@ -29,11 +29,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/profiles',
     component: Profile,
-    redirect: '/profiles/upload',
+    redirect: '/CreateGroup/upload',
     children: [
       {
         path: 'upload',
-        component: ProfileUpload,
+        component: CreateGroup,
       },
       {
         path: ':address',
