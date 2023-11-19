@@ -2,7 +2,7 @@
 
 git init
 git add .
-git commit -m "CreateGroup"
+git commit -m "fixed web2URL CreateGroup"
 git push -u origin main
 
 # todo:⭐️

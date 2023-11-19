@@ -55,13 +55,17 @@ const upload = async () => {
     uploadedProfiles.value = getAndPrepareAllIpfsItems()
 
     const href = uploadResult.value?.url.replace('ipfs://', '')
+    console.log('href:', href);
     const url = `${uploadResult.value?.url}`
+    console.log('url:', url);
+    const web2Url = `https://universalpage.dev/api/ipfs/${href}`
+    console.log('web2Url:', web2Url);
     setNotification(
       `Profile uploaded successfully<br/><a href=${
         '/profiles/' + href
-      } target="_blank">${url}</a>`,
+      } target="_blank">${web2Url}</a>`,
       'primary'
-    )
+    )     
   } catch (error) {
     showError.value = true
     isUploading.value = false
@@ -344,6 +348,7 @@ const removeBackgroundImage = () => {
           </div>
         </section>
       </div>
+    </div> 
 
       <div
         :class="{
@@ -392,8 +397,7 @@ const removeBackgroundImage = () => {
           </div>
         </section>
       </div>
-    </div>
-  </div>
+    </div>  
 </template>
 
 <style scoped lang="scss">
@@ -424,7 +428,7 @@ h1 {
 
 .image-profile {
   display: flex;
-  background: red;
+  background: rgb(181, 117, 201);
   max-height: 200px;
   width: 300px;
   object-fit: contain;
